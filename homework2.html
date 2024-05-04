@@ -1,0 +1,100 @@
+<html>
+
+  <head>
+
+    <title>Homework 2</title>
+
+    <style>
+
+      body {
+            color: #ffffff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+      }
+
+      .container{
+            position: relative;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgb(147, 193, 213);
+            padding: 50px 5px;
+            padding-left: 70px;
+         
+        }
+
+        /* style game board */
+        .game{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .eachCard{
+            position: relative;
+            width: 100px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            background: #666666;
+            transition: 0.25s;
+            color: transparent;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .eachCard.revealed{
+          background-color: #82c37b;
+          color: #000;
+          cursor: default; /*revealed cards can't be clicked*/
+        }
+
+        .eachCard.hidden:hover{
+          background-color: #333333;
+          color: transparent;
+          cursor: pointer;
+        }
+
+        .eachCard.chosen, .eachCard.revealed{
+          border: 2px solid #666666;
+          color: hsl(0, 0%, 100%);
+        }
+
+       #gameOverMessage{
+          display: none; 
+          position: fixed; 
+          background-color: rgb(205, 186, 80); 
+          padding: 18px; 
+          top: 50%; 
+          left: 50%; 
+          transform: translate(-50%, -50%); 
+          z-index: 100; 
+
+        }
+    </style>
+      
+    <script src="homework2.js"></script>
+
+  </head>
+ 
+  <body>
+    <div class="container">
+    
+      <div class="game"></div>
+
+    <div id="game-grid"></div> <!--do we need this-->
+
+    <div id="gameOverMessage">
+      <p>Congratulations</p>
+      <button id="playAgainButton">Play Again</button>
+  </div>
+  </body>
+
+</html>
